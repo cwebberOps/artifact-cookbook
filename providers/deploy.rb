@@ -81,9 +81,7 @@ def load_current_resource
       end
     end
 
-    chef_gem "aws-sdk" do
-      version "1.29.0"
-    end
+    chef_gem "aws-sdk"
 
     @artifact_version = @new_resource.version
     @artifact_location = @new_resource.artifact_location
