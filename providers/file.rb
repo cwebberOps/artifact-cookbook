@@ -38,9 +38,7 @@ def load_current_resource
     @nexus_configuration = new_resource.nexus_configuration
     @nexus_connection = Chef::Artifact::Nexus.new(node, nexus_configuration)
   elsif Chef::Artifact.from_s3?(@new_resource.location)
-    chef_gem "aws-sdk" do
-      version "1.29.0"
-    end
+    chef_gem "aws-sdk" 
   end
   @file_location = new_resource.location
   @file_path = new_resource.path
